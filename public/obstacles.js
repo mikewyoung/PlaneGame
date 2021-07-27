@@ -210,6 +210,7 @@ function createObstacle(obstacle){
 }
 
 function constructCourse(courses){
+    obstacleHeight = 150;
     courses.forEach((course)=>{
         createObstacle(course);
     })
