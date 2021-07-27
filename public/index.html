@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="resizeCanvas()">
+
+    <div class="modal">
+        <div class="modal-window" id="name-entry">
+            <h2>Enter your name</h2>
+            <input type="text">
+            <button onclick="connect()">Play</button>
+        </div>
+    </div>
+
+    <div class="modal hidden">
+        <div class="modal-window">
+            <h2></h2>
+            <button onclick="handleDisconnect(true)">Leave</button>
+        </div>
+    </div>
+
+    <canvas>
+        Sorry, but your browser doesn't support Canvas.
+    </canvas>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="sprites.js"></script>
+    <script src="entities.js"></script>
+    <script src="obstacles.js"></script>
+    <script src="game.js"></script>
+    <script src="networking.js"></script>
+    
+</body>
+</html>
