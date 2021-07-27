@@ -24,7 +24,7 @@ function connect(){
         return;
     }
 
-    socket = io("ws://localhost:8081", 
+    socket = io("ws://https://plane-race.herokuapp.com/", 
     {
         reconnectionDelayMax: 2000,
         query: {
