@@ -24,7 +24,7 @@ function connect(){
         return;
     }
 
-    socket = io("wss://https://plane-race.herokuapp.com/", 
+    socket = io("https://https://plane-race.herokuapp.com/", 
     {
         reconnectionDelayMax: 2000,
         query: {
