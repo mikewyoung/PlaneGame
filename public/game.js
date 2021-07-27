@@ -109,7 +109,6 @@ function renderLoop(now){
     }
 
     let elapsed = now - lastTime;
-    console.log(elapsed)
 
     if (elapsed >= msPerFrame){
         entities.forEach((entity)=>{
