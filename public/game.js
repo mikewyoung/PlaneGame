@@ -95,7 +95,7 @@ function resetCourse(){
 resetCourse();
 
 let lastTime;
-let msPerFrame = -1 * (1000/60);
+let msPerFrame = (1000/60);
 
 function renderLoop(now){
     let width = document.documentElement.clientWidth;
@@ -108,11 +108,10 @@ function renderLoop(now){
         lastTime = now;
     }
 
-    let elapsed = lastTime - now;
-
+    let elapsed = now - lastTime;
     console.log(elapsed)
 
-    if (elapsed <= msPerFrame){
+    if (elapsed >= msPerFrame){
         entities.forEach((entity)=>{
             if (entity.step){
                 entity.step();
