@@ -4,7 +4,6 @@ let entities = [];
 class Camera{
     constructor(x = 0, y = 0){
         this.position = {x: x, y: y};
-        this.target;
         this.cameraWidth = 640;
         this.pid = -1;
         this.cameraHeight = 480;
@@ -12,7 +11,7 @@ class Camera{
     }
 
     step(){
-        if (this.target != undefined){
+        if (this.target){
             //this.position.x = this.target.position.x - canvas.width / 2;
             this.position.x = 0;
             this.position.y = this.target.position.y - canvas.height / 2 + 50;

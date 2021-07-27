@@ -94,19 +94,35 @@ function resetCourse(){
 
 resetCourse();
 
+let lastTime;
+let msPerFrame = -1 * (1000/60);
 
-function renderLoop(){
+function renderLoop(now){
     let width = document.documentElement.clientWidth;
     let height = document.documentElement.clientHeight;
 
     ctx.fillStyle = "blue";
     ctx.fillRect(0, 0, width, height);
 
+    if (!lastTime){
+        lastTime = now;
+    }
+
+    let elapsed = lastTime - now;
+
+    console.log(elapsed)
+
+    if (elapsed <= msPerFrame){
+        entities.forEach((entity)=>{
+            if (entity.step){
+                entity.step();
+            }
+        })
+        lastTime = now;
+    }
+    
 
     entities.forEach(function(entity){
-
-        if (entity.step)
-            entity.step();
 
         if(entity.render)
             entity.render();
@@ -114,7 +130,8 @@ function renderLoop(){
 
     requestAnimationFrame(renderLoop);
 }
-renderLoop();
+
+requestAnimationFrame(renderLoop)
 
 function startInterval(){
     interval = setInterval(()=>{
